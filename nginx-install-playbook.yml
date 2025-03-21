@@ -2,7 +2,7 @@
   hosts: web_servers
   become: yes
 
-- tasks:
+ tasks:
   - name: Update system package
     yum:
         update_cache: yes
