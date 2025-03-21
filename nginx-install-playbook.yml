@@ -6,12 +6,24 @@
   - name: Update system package
     yum:
         update_cache: yes
-        when: ansible_os_family == "RedHat"
+    when: ansible_os_family == "RedHat"
 
   - name: Install nginx
     yum: 
         name: nginx
         state: present
-        when: ansible_os_family == "RedHat"
+    when: ansible_os_family == "RedHat"
+
+  - name: Start and enable Nginx
+    service:
+        name: nginx
+        state: started
+        enabled: yes
+
+handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
         
         
