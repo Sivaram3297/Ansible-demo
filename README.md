@@ -14,3 +14,6 @@ Core Components
   6. Handlers: Special tasks triggered when a change occurs (e.g., restarting a service).
 
     
+Commands:
+ansible-playbook -i inventory.ini nginx-install-playbook.yml ==> To run the ansible playbook
+
